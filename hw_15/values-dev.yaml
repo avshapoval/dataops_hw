@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: username/fastapi-app
+  tag: "dev"
+  pullPolicy: Always
+
+resources:
+  enabled: false
+
+ingress:
+  enabled: false

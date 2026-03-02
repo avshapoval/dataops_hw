@@ -1,0 +1,18 @@
+replicaCount: 2
+
+image:
+  repository: username/fastapi-app
+  tag: "v1.1.0"
+
+resources:
+  enabled: true
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "512Mi"
+    cpu: "500m"
+
+ingress:
+  enabled: true
+  host: staging.example.com
