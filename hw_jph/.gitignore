@@ -1,0 +1,5 @@
+.env
+jupyterhub.sqlite
+jupyterhub_cookie_secret
+__pycache__/
+*.pyc

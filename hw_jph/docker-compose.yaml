@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  jupyterhub:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jupyterhub_server
+    ports:
+      - "${JUPYTERHUB_PORT}:8000"
+    volumes:
+      - ./jupyterhub_config.py:/etc/jupyterhub/jupyterhub_config.py:ro
+      - jupyterhub_data:/srv/jupyterhub
+    environment:
+      JUPYTERHUB_CRYPT_KEY: ${JUPYTERHUB_CRYPT_KEY}
+      JUPYTERHUB_ADMIN_USER: ${JUPYTERHUB_ADMIN_USER}
+      JUPYTERHUB_ADMIN_PASSWORD: ${JUPYTERHUB_ADMIN_PASSWORD}
+    restart: unless-stopped
+
+volumes:
+  jupyterhub_data:
