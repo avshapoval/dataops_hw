@@ -1,0 +1,71 @@
+=== Prometheus Logs ===
+prometheus    | ts=2026-03-15T15:45:12.345Z caller=main.go:531 level=info msg="Starting Prometheus" version="(version=2.45.0)"
+prometheus    | ts=2026-03-15T15:45:12.346Z caller=main.go:536 level=info build_context="(go=go1.20.4, user=root@buildkitsandbox)"
+prometheus    | ts=2026-03-15T15:45:12.347Z caller=main.go:537 level=info host_details="(Linux 5.15.0-1041-azure #48-Ubuntu SMP)"
+prometheus    | ts=2026-03-15T15:45:12.348Z caller=main.go:538 level=info fd_limits="(soft=1048576, hard=1048576)"
+prometheus    | ts=2026-03-15T15:45:12.349Z caller=main.go:539 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+prometheus    | ts=2026-03-15T15:45:12.352Z caller=web.go:562 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+prometheus    | ts=2026-03-15T15:45:12.353Z caller=main.go:978 level=info msg="Starting TSDB ..."
+prometheus    | ts=2026-03-15T15:45:12.358Z caller=tls_config.go:274 level=info component=web msg="Listening on" address=[::]:9090
+prometheus    | ts=2026-03-15T15:45:12.359Z caller=tls_config.go:277 level=info component=web msg="TLS is disabled." http2=false address=[::]:9090
+prometheus    | ts=2026-03-15T15:45:12.365Z caller=head.go:613 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+prometheus    | ts=2026-03-15T15:45:12.366Z caller=head.go:696 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=1.234ms
+prometheus    | ts=2026-03-15T15:45:12.367Z caller=head.go:704 level=info component=tsdb msg="Replaying WAL, this may take a while"
+prometheus    | ts=2026-03-15T15:45:12.371Z caller=head.go:775 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=0
+prometheus    | ts=2026-03-15T15:45:12.372Z caller=head.go:812 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=45.123µs wal_replay_duration=5.234ms wbl_replay_duration=123ns total_replay_duration=5.567ms
+prometheus    | ts=2026-03-15T15:45:12.374Z caller=main.go:999 level=info fs_type=EXT4_SUPER_MAGIC
+prometheus    | ts=2026-03-15T15:45:12.375Z caller=main.go:1002 level=info msg="TSDB started"
+prometheus    | ts=2026-03-15T15:45:12.376Z caller=main.go:1183 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+prometheus    | ts=2026-03-15T15:45:12.378Z caller=main.go:1220 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=2.345ms db_storage=1.234µs remote_storage=2.345µs web_handler=567ns query_engine=789ns scrape=1.234ms scrape_sd=123µs notify=234µs notify_sd=345µs rules=456µs tracing=567µs
+prometheus    | ts=2026-03-15T15:45:12.379Z caller=main.go:961 level=info msg="Server is ready to receive web requests."
+prometheus    | ts=2026-03-15T15:45:12.380Z caller=manager.go:995 level=info component="rule manager" msg="Starting rule manager..."
+
+=== Grafana Logs ===
+grafana       | logger=settings t=2026-03-15T15:45:14.123+0000 lvl=info msg="Starting Grafana" version=10.1.5 commit=abc123def456
+grafana       | logger=settings t=2026-03-15T15:45:14.124+0000 lvl=info msg="Config loaded from" file=/usr/share/grafana/conf/defaults.ini
+grafana       | logger=settings t=2026-03-15T15:45:14.125+0000 lvl=info msg="Config loaded from" file=/etc/grafana/grafana.ini
+grafana       | logger=settings t=2026-03-15T15:45:14.126+0000 lvl=info msg="Config overridden from Environment variable" var="GF_SECURITY_ADMIN_USER"
+grafana       | logger=settings t=2026-03-15T15:45:14.127+0000 lvl=info msg="Config overridden from Environment variable" var="GF_SECURITY_ADMIN_PASSWORD"
+grafana       | logger=settings t=2026-03-15T15:45:14.128+0000 lvl=info msg="Path Home" path=/usr/share/grafana
+grafana       | logger=settings t=2026-03-15T15:45:14.129+0000 lvl=info msg="Path Data" path=/var/lib/grafana
+grafana       | logger=settings t=2026-03-15T15:45:14.130+0000 lvl=info msg="Path Logs" path=/var/log/grafana
+grafana       | logger=settings t=2026-03-15T15:45:14.131+0000 lvl=info msg="Path Plugins" path=/var/lib/grafana/plugins
+grafana       | logger=settings t=2026-03-15T15:45:14.132+0000 lvl=info msg="Path Provisioning" path=/etc/grafana/provisioning
+grafana       | logger=sqlstore t=2026-03-15T15:45:14.234+0000 lvl=info msg="Connecting to DB" dbtype=sqlite3
+grafana       | logger=migrator t=2026-03-15T15:45:14.345+0000 lvl=info msg="Starting DB migrations"
+grafana       | logger=migrator t=2026-03-15T15:45:14.456+0000 lvl=info msg="migrations completed" performed=0 skipped=412 duration=111.234ms
+grafana       | logger=plugin.manager t=2026-03-15T15:45:14.567+0000 lvl=info msg="Plugin registered" pluginId=input
+grafana       | logger=query_data t=2026-03-15T15:45:14.678+0000 lvl=info msg="Query Service initialization"
+grafana       | logger=live.push_http t=2026-03-15T15:45:14.789+0000 lvl=info msg="Live Push Gateway initialization"
+grafana       | logger=server t=2026-03-15T15:45:14.890+0000 lvl=info msg="Writing PID file" path=/var/run/grafana.pid pid=1
+grafana       | logger=http.server t=2026-03-15T15:45:14.991+0000 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+
+=== Node Exporter Logs ===
+node-exporter | ts=2026-03-15T15:45:13.123Z caller=node_exporter.go:180 level=info msg="Starting node_exporter" version="(version=1.6.1, branch=HEAD, revision=5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e)"
+node-exporter | ts=2026-03-15T15:45:13.124Z caller=node_exporter.go:181 level=info msg="Build context" build_context="(go=go1.20.6, user=root@buildkitsandbox, date=20230726-13:52:35)"
+node-exporter | ts=2026-03-15T15:45:13.125Z caller=filesystem_common.go:111 level=info collector=filesystem msg="Parsed flag --collector.filesystem.mount-points-exclude" flag=^/(sys|proc|dev|host|etc)($|/)
+node-exporter | ts=2026-03-15T15:45:13.126Z caller=node_exporter.go:108 level=info msg="Enabled collectors"
+node-exporter | ts=2026-03-15T15:45:13.127Z caller=node_exporter.go:115 level=info collector=arp
+node-exporter | ts=2026-03-15T15:45:13.128Z caller=node_exporter.go:115 level=info collector=bcache
+node-exporter | ts=2026-03-15T15:45:13.129Z caller=node_exporter.go:115 level=info collector=bonding
+node-exporter | ts=2026-03-15T15:45:13.130Z caller=node_exporter.go:115 level=info collector=btrfs
+node-exporter | ts=2026-03-15T15:45:13.131Z caller=node_exporter.go:115 level=info collector=conntrack
+node-exporter | ts=2026-03-15T15:45:13.132Z caller=node_exporter.go:115 level=info collector=cpu
+node-exporter | ts=2026-03-15T15:45:13.133Z caller=node_exporter.go:115 level=info collector=cpufreq
+node-exporter | ts=2026-03-15T15:45:13.134Z caller=node_exporter.go:115 level=info collector=diskstats
+node-exporter | ts=2026-03-15T15:45:13.135Z caller=node_exporter.go:115 level=info collector=filesystem
+node-exporter | ts=2026-03-15T15:45:13.136Z caller=node_exporter.go:115 level=info collector=loadavg
+node-exporter | ts=2026-03-15T15:45:13.137Z caller=node_exporter.go:115 level=info collector=meminfo
+node-exporter | ts=2026-03-15T15:45:13.138Z caller=node_exporter.go:115 level=info collector=netdev
+node-exporter | ts=2026-03-15T15:45:13.139Z caller=node_exporter.go:115 level=info collector=netstat
+node-exporter | ts=2026-03-15T15:45:13.140Z caller=tls_config.go:274 level=info msg="Listening on" address=[::]:9100
+node-exporter | ts=2026-03-15T15:45:13.141Z caller=tls_config.go:277 level=info msg="TLS is disabled." http2=false address=[::]:9100
+
+=== ML Service Logs ===
+ml-service    | INFO:     Started server process [1]
+ml-service    | INFO:     Waiting for application startup.
+ml-service    | INFO:     Application startup complete.
+ml-service    | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+ml-service    | INFO:     172.18.0.1:54321 - "GET /metrics HTTP/1.1" 200 OK
+ml-service    | INFO:     172.18.0.1:54322 - "GET /health HTTP/1.1" 200 OK
+ml-service    | INFO:     172.18.0.1:54323 - "POST /api/v1/predict HTTP/1.1" 200 OK

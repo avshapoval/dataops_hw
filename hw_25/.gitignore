@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.pkl
+.env
+*.log
+grafana_data/
+prometheus_data/

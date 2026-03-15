@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.pkl
+mlruns/
+mlflow_data/
+.ipynb_checkpoints/
+*.log
