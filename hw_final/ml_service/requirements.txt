@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+scikit-learn
+joblib
+numpy
+pydantic
+starlette-exporter
+python-json-logger
+psycopg2-binary
